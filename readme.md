@@ -7,6 +7,8 @@ On hardware end we will require following item:
 - IDC connector cable 
 - One push button
 
+![Panic Button](https://raw.githubusercontent.com/reachplus/blob/master/panicbutton.jpg)
+
 Once we have required items, next thing is to connect them together. Lets assign following ports to hardware item mentioned above.
 
 **Blue LED**
