@@ -64,7 +64,7 @@ Next we have to setup ports numbers and RPAS settings using settings.config.json
 
 }
 }
-'''
+```
 
 **Step 3:**
 Next is to define Alert payload to send to server, we will be doing this in separate text file and name of that text file will be entered in configuration file above
@@ -123,7 +123,7 @@ Next is to define Alert payload to send to server, we will be doing this in sepa
 <important>false</important>
 <validForMins>10</validForMins>
 </Job>
-'''
+```
 
 **Step 4:**
 We will monitor stat of push button in a separate thread and if button is pressed we will call sendAlert method and will turn on the blue led. 
@@ -151,7 +151,7 @@ sleep(0.1)         # wait 0.1 seconds
 
 finally:                   
 GPIO.cleanup()         
-'''
+```
 
 We are using flag to make sure only one alert is send on per push bases.
 
@@ -168,7 +168,7 @@ sleep(2)
 finally:                   
 GPIO.cleanup()         
 systemError()
-'''
+```
 **Step 6:**
 Now this is the important step, here we are initiating two threads based on methods defined in step 4 and 5.
 
@@ -200,7 +200,7 @@ GPIO.output(systemOnlinePin, 1)
 GPIO.output(sendStatusPin, 1)
 
 while 1:
-'''
+```
 pass
 **Demo**
 After above steps and running your script you will see green led stable is script is working good. By pushing button, blue led will glow and will go down if alert send successfully, in case of error blue led will keep blinking .
