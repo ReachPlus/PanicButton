@@ -51,6 +51,7 @@ We will be using this as rest client
 **Step 2:**
 Next we have to setup ports numbers and RPAS settings using settings.config.json configuration file
 
+```xml
 {
 "settings":{
 "sdkUrl":"http://192.168.5.168:8080/rpas-webservices/jobs",
@@ -63,10 +64,12 @@ Next we have to setup ports numbers and RPAS settings using settings.config.json
 
 }
 }
+'''
 
 **Step 3:**
 Next is to define Alert payload to send to server, we will be doing this in separate text file and name of that text file will be entered in configuration file above
 
+```xml
 <Job xmlns:ns2="urn:oasis:names:tc:emergency:cap:1.2">
 <acknowledgement>
 <isRequired>true</isRequired>
@@ -120,10 +123,12 @@ Next is to define Alert payload to send to server, we will be doing this in sepa
 <important>false</important>
 <validForMins>10</validForMins>
 </Job>
+'''
 
 **Step 4:**
 We will monitor stat of push button in a separate thread and if button is pressed we will call sendAlert method and will turn on the blue led. 
 
+```python
 def sendAlertThread( ):
 try:
 while True:            
@@ -146,12 +151,14 @@ sleep(0.1)         # wait 0.1 seconds
 
 finally:                   
 GPIO.cleanup()         
+'''
 
 We are using flag to make sure only one alert is send on per push bases.
 
 **Step 5:**
 This step is not mandatory, here we will keep green led blinking to make sure our script is running.
 
+```python
 def onlineBlinkerThread( ):
 try:
 while True:            
@@ -161,10 +168,11 @@ sleep(2)
 finally:                   
 GPIO.cleanup()         
 systemError()
-
+'''
 **Step 6:**
 Now this is the important step, here we are initiating two threads based on methods defined in step 4 and 5.
 
+```python
 with open('settings.config.json') as json_data_file:
 config = json.load(json_data_file)
 
@@ -192,6 +200,7 @@ GPIO.output(systemOnlinePin, 1)
 GPIO.output(sendStatusPin, 1)
 
 while 1:
+'''
 pass
 **Demo**
 After above steps and running your script you will see green led stable is script is working good. By pushing button, blue led will glow and will go down if alert send successfully, in case of error blue led will keep blinking .
