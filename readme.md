@@ -23,6 +23,8 @@ Connect ground end of the led to pin 34 and positive end to pin 33 which is GPIO
 
 Connect one end of push button to pin 1 which is 3.3V and other end to pin 38 which is GPIO.
 
+![Schematic](Schematic.png)
+
 Software
 -----------------------
 We will be using Python scripting to work with the GPIO's of the Raspberry. Let's do it in steps:
