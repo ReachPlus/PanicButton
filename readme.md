@@ -206,6 +206,7 @@ while 1:
    pass
 ```
 pass
-**Demo**
+Demo
+-----------------------
 After above steps and running your script you will see green led stable is script is working good. By pushing button, blue led will glow and will go down if alert send successfully, in case of error blue led will keep blinking .
 
