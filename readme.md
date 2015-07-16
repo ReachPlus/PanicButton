@@ -31,9 +31,8 @@ Software
 -----------------------
 We will be using Python scripting to work with the GPIO's of the Raspberry Pi.
 
-**Step 1:**
+**Step 1: Importing modules that are required**
 
-We have started by importing certain modules we will need
 ```xml
 import thread
 
@@ -44,7 +43,7 @@ import requests
 from requests.auth import HTTPBasicAuth 
 ```
 
-*thread*	- helps us to create threads
+*thread*	- helps us create threads
 
 *RPi.GPIO* - will be used to work with Raspberry Pi ports
 
@@ -52,8 +51,9 @@ from requests.auth import HTTPBasicAuth
 
 *requests* - will be used as the REST client
 
-**Step 2:**
-Next we have to setup ports numbers and RPAS settings using settings.config.json configuration file
+**Step 2: Configure Reachlus Alerts server settings**
+
+These settings will be made in the settings.config.json configuration file
 
 ```xml
 {
@@ -70,8 +70,9 @@ Next we have to setup ports numbers and RPAS settings using settings.config.json
 }
 ```
 
-**Step 3:**
-Next is to define Alert payload to send to server, we will be doing this in separate text file and name of that text file will be entered in configuration file above
+**Step 3: Define the Alert Payload**
+
+The alert payload will contain the contents of the alert we plan to send. It will be stored in a separate text file which is loaded from the settings.config.json file.
 
 ```xml
 <Job xmlns:ns2="urn:oasis:names:tc:emergency:cap:1.2">
@@ -129,8 +130,9 @@ Next is to define Alert payload to send to server, we will be doing this in sepa
 </Job>
 ```
 
-**Step 4:**
-We will monitor stat of push button in a separate thread and if button is pressed we will call sendAlert method and will turn on the blue led. 
+**Step 4: Monitor the status of the push button**
+
+We will monitor status of push button in a separate thread. If the button is pressed we will call the sendAlert method and turn on the blue LED. 
 
 ```python
 def sendAlertThread( ):
@@ -157,10 +159,11 @@ def sendAlertThread( ):
         GPIO.cleanup()            
 ```
 
-We are using flag to make sure only one alert is send on per push bases.
+The flag ensures that the alert is only sent once when the button is pushed.
 
-**Step 5:**
-This step is not mandatory, here we will keep green led blinking to make sure our script is running.
+**Step 5: Keep the Green LED blinking when the script is running (optional)**
+
+When the script is being executed, we want the green LED to be blinking.
 
 ```python
 def onlineBlinkerThread( ):
@@ -174,8 +177,7 @@ def onlineBlinkerThread( ):
         GPIO.cleanup()         # clean up after yourself
         systemError()
 ```
-**Step 6:**
-Now this is the important step, here we are initiating two threads based on methods defined in step 4 and 5.
+**Step 6: Initiate two threads based on the methods defines in steps 4 and 5**
 
 ```python
 with open('settings.config.json') as json_data_file:
@@ -210,5 +212,5 @@ while 1:
 
 Demo
 -----------------------
-After above steps and running your script you will see green led stable is script is working good. By pushing button, blue led will glow and will go down if alert send successfully, in case of error blue led will keep blinking .
+Execute the script on the Raspberry Pi. If the green LED is blinking, it represents that the system is not online and alerts cannot be sent. Once the green LED is stable you are ready to trigger the alert you created using the push button. When the push button is pushed, the blue LED should become solid. This represents that the alert transmition is in progresses. Once the alert has been sent, the blue LED will turn off. If the blue LED starts blinking, it represents that the alert could not be sent.
 
