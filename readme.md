@@ -51,7 +51,7 @@ from requests.auth import HTTPBasicAuth
 
 *requests* - will be used as the REST client
 
-**Step 2: Configure Reachlus Alerts server settings**
+**Step 2: Configure ReachPlus Alerts server settings**
 
 These settings will be made in the settings.config.json configuration file
 
@@ -212,5 +212,5 @@ while 1:
 
 Demo
 -----------------------
-Execute the script on the Raspberry Pi. If the green LED is blinking, it represents that the system is not online and alerts cannot be sent. Once the green LED is stable you are ready to trigger the alert using the push button. When the push button is pushed, the blue LED should become solid. This represents that the alert transmition is in progresses. Once the alert has been sent, the blue LED will turn off. If the blue LED starts blinking, it represents that the alert could not be sent.
+Execute the script on the Raspberry Pi. If the green LED is blinking, it represents that the system is not online and alerts cannot be sent. Once the green LED is stable you are ready to trigger the alert using the push button. When the push button is pushed, the blue LED should become solid. This represents that the alert transmission is in progress. Once the alert has been sent, the blue LED will turn off. If the blue LED starts blinking, it represents that the alert could not be sent.
 
