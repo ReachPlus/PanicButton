@@ -1,36 +1,39 @@
-Setting up the hardware
------------------------
-
-On hardware end we will require following item:
+You will need the following hardware in order to trigger alerts from ReachPlus Alerts using a panic button.
 
 - Raspberry PI 
-- IDC connector cable 
+- IDC connector cables
 - One push button
+- One green LED
+- One blue LED
 
 ![Panic Button](PanicButton.JPG)
 
-Once we have required items, next thing is to connect them together. Lets assign following ports to hardware item mentioned above.
+Setting up the hardware
+-----------------------
 
 **Blue LED**
 
-Connect ground end of led to pin 39 which is ground and positive end of the led to ping 40 which is GPIO.
+- Connect the ground end of the LED to pin 39 which is ground
+- Connect the positive end of the LED to pin 40 which is GPIO
 
 **Green LED**
 
-Connect ground end of the led to pin 34 and positive end to pin 33 which is GPIO.
+- Connect the ground end of the LED to pin 34 
+- Connect the positive end of the LED to pin 33 which is GPIO
 
 **Push Button**
 
-Connect one end of push button to pin 1 which is 3.3V and other end to pin 38 which is GPIO.
+- Using the IDC connector cables, connect one end of push button to pin 1 which is 3.3V and other end to pin 38 which is GPIO
 
 ![Schematic](Schematic.png)
 
 Software
 -----------------------
-We will be using Python scripting to work with the GPIO's of the Raspberry. Let's do it in steps:
+We will be using Python scripting to work with the GPIO's of the Raspberry Pi.
 
 **Step 1:**
-First of all we will have to include certain module described below
+
+We have started by importing certain modules we will need
 ```xml
 import thread
 
@@ -40,19 +43,14 @@ from time import sleep
 import requests
 from requests.auth import HTTPBasicAuth 
 ```
-In above piece of code we have imported number of module to assist us achieve our goal.
 
-*thread*	
-This will help us to create threads
+*thread*	- helps us to create threads
 
-*RPi.GPIO*
-We will use this to work with Raspberry ports
+*RPi.GPIO* - will be used to work with Raspberry Pi ports
 
-*sleep*	
-We will use this for delays
+*sleep* - will be used for delays
 
-*requests*	
-We will be using this as rest client
+*requests* - will be used as the REST client
 
 **Step 2:**
 Next we have to setup ports numbers and RPAS settings using settings.config.json configuration file
