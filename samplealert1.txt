@@ -25,14 +25,14 @@
          <ns2:certainty>Observed</ns2:certainty>
          <ns2:audience></ns2:audience>
          <ns2:senderName></ns2:senderName>
-         <ns2:headline>Evacuate the building as per evacuation plan</ns2:headline>
-         <ns2:description>Fire has been observed on the forth floor and is spreading across the building. Please evacuate your rooms and proceed to your assembly area immediately. Do not use elevators.</ns2:description>
+         <ns2:headline>A fire has broken out on the fourth floor. Evacuate the building. Make your way to the nearest exit!</ns2:headline>
+         <ns2:description>A fire has been observed on the fourth floor and is spreading to the 3rd and 5th floors of the building. Immediately evacuate your offices and make for the closest emergency exit. Upon exiting the building proceed to the designated assembly area. This is not a drill.</ns2:description>
          <ns2:instruction>1) Remain calm
-        2) Leave immediately, do not wait around to collect your belongings
+        2) Leave immediately! Do not wait around to collect your belongings
         3) Ensure the room is empty upon leaving and shut your room door
-        4) Quickly evacuate the building at your nearest Emergency Exit
-        5) Do not use the lift
-        6) Wait at the designated meeting point</ns2:instruction>
+        4) Quickly evacuate the building using the nearest Emergency Exit
+        5) Do not use the elevator
+        6) Proceed to the designated assembly area</ns2:instruction>
          <ns2:web>www.firstaid.com</ns2:web>
          <ns2:contact>Jimmy Jones: 555-535-5789</ns2:contact>
          <ns2:parameter>
