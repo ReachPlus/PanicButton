@@ -1,6 +1,6 @@
 {
 	"settings":{
-		"sdkUrl":"http://192.168.5.168:8080/rpas-webservices/jobs",
+		"sdkUrl":"http://192.168.5.166:47665/jobs",
 		"rpasUser":"admin",
 		"rpasPassword":"alerts",
 		"triggerInputPin":38,
